@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #080c0b;
+  --color-ink-2: #0c1311;
+  --color-ink-3: #111a17;
+  --color-teal: #14b8a6;
+  --color-emerald: #10b981;
+  --color-emerald-deep: #0e8f6a;
+  --color-amber: #f59e0b;
+  --color-mist: #8a9b96;
+  --color-line: #1a2521;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink);
+  color: #e7efec;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Orb ---------- */
+.orb-stage {
+  position: relative;
+  width: clamp(320px, 48vw, 560px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  filter: saturate(1.05);
+}
+
+.orb-core,
+.orb-glow,
+.orb-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.orb-core {
+  background:
+    radial-gradient(circle at 38% 32%, #5eead4 0%, #14b8a6 28%, #10b981 52%, #0e8f6a 74%, #07412f 100%);
+  filter: blur(2px);
+  animation: orb-breathe 24s ease-in-out infinite, orb-spin 38s linear infinite, orb-hue 30s ease-in-out infinite;
+  transform-origin: center;
+  box-shadow:
+    inset -40px -50px 90px rgba(4, 18, 14, 0.65),
+    inset 30px 30px 70px rgba(94, 234, 212, 0.35);
+}
+
+.orb-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.45) 0%, rgba(16, 185, 129, 0.22) 35%, transparent 68%);
+  filter: blur(40px);
+  transform: scale(1.25);
+  animation: orb-pulse 16s ease-in-out infinite;
+}
+
+.orb-ring {
+  background: radial-gradient(circle at 30% 28%, rgba(254, 243, 199, 0.18) 0%, transparent 22%);
+  mix-blend-mode: screen;
+  animation: orb-spin 52s linear infinite reverse;
+  opacity: 0.7;
+}
+
+@keyframes orb-breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.06) translateY(-1.5%); }
+}
+
+@keyframes orb-spin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.04); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes orb-hue {
+  0%, 100% { filter: blur(2px) hue-rotate(0deg); }
+  50% { filter: blur(2px) hue-rotate(18deg); }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1.25); }
+  50% { opacity: 0.85; transform: scale(1.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-core,
+  .orb-glow,
+  .orb-ring {
+    animation: none !important;
+  }
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink); }
+::-webkit-scrollbar-thumb { background: #1d2c27; border-radius: 6px; border: 2px solid var(--color-ink); }
+::-webkit-scrollbar-thumb:hover { background: #243a32; }
+
+::selection { background: rgba(16, 185, 129, 0.28); color: #eafff7; }
+
+/* ---------- Mono label ---------- */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+
+/* ---------- Section reveal (motion handles the rest) ---------- */
+.ruler {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line), transparent);
+}

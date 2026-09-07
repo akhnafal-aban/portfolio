@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #faf9f6;
+  --color-paper-warm: #f4f1ea;
+  --color-ink: #14110f;
+  --color-ink-soft: #2a2520;
+  --color-ink-muted: #6b6358;
+  --color-rule: #d9d3c6;
+  --color-accent: #8b1a1a;
+  --color-accent-soft: #b34a4a;
+
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-feature-settings: 'kern', 'liga', 'calt';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Scroll-reveal: CSS only via animation-timeline (progressive enhancement) */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .reveal {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Editorial columnar text */
+.columns-prose {
+  column-width: 22ch;
+  column-gap: 2.5rem;
+  column-rule: 1px solid var(--color-rule);
+}
+
+.columns-prose p {
+  break-inside: avoid-column;
+  hyphens: auto;
+}
+
+/* Small caps editorial label */
+.label-caps {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}

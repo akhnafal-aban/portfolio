@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-term-bg: #0a0a0a;
+  --color-term-bg-soft: #0c0c0c;
+  --color-term-green: #00ff41;
+  --color-term-green-bright: #5eff7a;
+  --color-term-green-dim: #22cc55;
+  --color-term-green-faint: #1a8a38;
+  --color-term-amber: #ffb000;
+  --color-term-cyan: #56c8ff;
+  --color-term-red: #ff5555;
+  --color-term-magenta: #ff79c6;
+  --color-term-muted: #4a7a5a;
+  --color-term-border: #1f3a28;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', ui-monospace,
+    SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-term-bg);
+}
+
+body {
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(0, 255, 65, 0.25);
+  color: var(--color-term-green-bright);
+}
+
+/* CRT scanline overlay — subtle, no pointer capture */
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+  animation: crt-drift 8s linear infinite;
+}
+
+.crt-vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+@keyframes crt-drift {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: 4px;
+  }
+}
+
+/* Blinking block cursor */
+.cursor-block {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.05em;
+  background: var(--color-term-green);
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: cursor-blink 1.05s steps(2, start) infinite;
+  box-shadow: 0 0 6px rgba(0, 255, 65, 0.55);
+}
+
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typewriter reveal — applied per output line */
+.tw-line {
+  overflow: hidden;
+  white-space: pre-wrap;
+  border-right: 0;
+}
+
+/* Link */
+.t-link {
+  color: var(--color-term-green-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--color-term-green-faint);
+}
+.t-link:hover {
+  color: #fff;
+  text-decoration-color: var(--color-term-green);
+}
+
+/* Scrollbar — terminal themed */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-term-green-faint) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-term-green-faint);
+  border-radius: 0;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Reduced motion: kill scanline drift + cursor blink, instant text */
+@media (prefers-reduced-motion: reduce) {
+  .crt-overlay {
+    animation: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0px,
+      rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, 0.12) 3px,
+      rgba(0, 0, 0, 0) 4px
+    );
+  }
+  .cursor-block {
+    animation: none;
+    opacity: 1;
+  }
+  .tw-line {
+    animation: none !important;
+  }
+}

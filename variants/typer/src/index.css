@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+@theme {
+  /* GitHub-dark canvas */
+  --color-canvas: #0d1117;
+  --color-canvas-soft: #161b22;
+  --color-canvas-elevated: #1c2128;
+  --color-border-subtle: #30363d;
+  --color-border-strong: #484f58;
+
+  /* GitHub syntax palette (restrained) */
+  --color-syn-keyword: #ff7b72;
+  --color-syn-string: #a5d6ff;
+  --color-syn-property: #79c0ff;
+  --color-syn-value: #7ee787;
+  --color-syn-comment: #8b949e;
+  --color-syn-punct: #c9d1d9;
+  --color-syn-number: #d2a8ff;
+
+  /* Text */
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #9198a1;
+  --color-text-tertiary: #6e7681;
+
+  /* Accent */
+  --color-accent: #7ee787;
+  --color-accent-dim: #54ae85;
+
+  /* Window chrome */
+  --color-dot-red: #ff5f56;
+  --color-dot-amber: #ffbd2e;
+  --color-dot-green: #27c93f;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: var(--color-canvas);
+  color: var(--color-text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+::selection {
+  background: rgba(126, 231, 135, 0.25);
+  color: #fff;
+}
+
+/* ---- Typewriter cursor ---- */
+.tw-cursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.15em;
+  margin-left: 1px;
+  background: var(--color-accent);
+  vertical-align: text-bottom;
+  transform: translateY(0.05em);
+  animation: tw-blink 1s steps(2, start) infinite;
+}
+
+@keyframes tw-blink {
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---- Section reveal (CSS-only, motion-aware) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Faint editor grid backdrop ---- */
+.editor-grid {
+  background-image:
+    linear-gradient(to right, rgba(48, 54, 61, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(48, 54, 61, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ---- Subtle scrollbar ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #30363d transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 8px;
+  border: 2px solid var(--color-canvas);
+}
+
+/* ---- Reduced motion: disable typing, disable reveal transform ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .tw-cursor {
+    animation: none;
+    opacity: 1;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

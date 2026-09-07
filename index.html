@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Noor Akhnafal Aban — Portfolio</title>
+<style>
+  :root {
+    --bg: #0a0e27;
+    --card: #1f2937;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #36bcf7;
+    --border: #374151;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  header { text-align: center; margin-bottom: 3rem; }
+  header h1 { font-size: 1.75rem; font-weight: 700; }
+  header p { color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  a.card {
+    display: block;
+    padding: 1.25rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  a.card h2 { font-size: 1.05rem; font-weight: 600; text-transform: capitalize; }
+  a.card p { color: var(--muted); font-size: 0.82rem; margin-top: 0.35rem; }
+  footer { text-align: center; margin-top: 3rem; color: var(--muted); font-size: 0.8rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Noor Akhnafal Aban</h1>
+    <p>20 portfolio design directions — pick one to explore.</p>
+  </header>
+  <div class="grid">
+    <a class="card" href="./variants/aurora/"><h2>aurora</h2><p>Soft gradients, glowing accents</p></a>
+    <a class="card" href="./variants/bento/"><h2>bento</h2><p>Grid layout, compact cards</p></a>
+    <a class="card" href="./variants/brutalist/"><h2>brutalist</h2><p>Raw, bold, unstyled</p></a>
+    <a class="card" href="./variants/deck/"><h2>deck</h2><p>Card stack, sliding</p></a>
+    <a class="card" href="./variants/dock/"><h2>dock</h2><p>Fixed nav, app-like</p></a>
+    <a class="card" href="./variants/editorial/"><h2>editorial</h2><p>Magazine layout, serif</p></a>
+    <a class="card" href="./variants/glass/"><h2>glass</h2><p>Glassmorphism, frosted</p></a>
+    <a class="card" href="./variants/grid/"><h2>grid</h2><p>CSS grid, structured</p></a>
+    <a class="card" href="./variants/kinetic/"><h2>kinetic</h2><p>Motion-driven, animated</p></a>
+    <a class="card" href="./variants/magnetic/"><h2>magnetic</h2><p>Magnetic hover effects</p></a>
+    <a class="card" href="./variants/mono/"><h2>mono</h2><p>Monochrome, minimal</p></a>
+    <a class="card" href="./variants/neobrutal/"><h2>neobrutal</h2><p>Neo-brutalist, shadows</p></a>
+    <a class="card" href="./variants/orb/"><h2>orb</h2><p>Circular, orbital</p></a>
+    <a class="card" href="./variants/ribbon/"><h2>ribbon</h2><p>Flowing, ribbon-like</p></a>
+    <a class="card" href="./variants/scroll/"><h2>scroll</h2><p>Scroll-driven, parallax</p></a>
+    <a class="card" href="./variants/spotlight/"><h2>spotlight</h2><p>Spotlight effect, dark</p></a>
+    <a class="card" href="./variants/swiss/"><h2>swiss</h2><p>Swiss design, grid-based</p></a>
+    <a class="card" href="./variants/terminal/"><h2>terminal</h2><p>Terminal/CLI aesthetic</p></a>
+    <a class="card" href="./variants/tilt/"><h2>tilt</h2><p>3D tilt, perspective</p></a>
+    <a class="card" href="./variants/typer/"><h2>typer</h2><p>Typewriter, text-focused</p></a>
+  </div>
+  <footer>
+    <a href="https://github.com/akhnafal-aban">github.com/akhnafal-aban</a>
+  </footer>
+</body>
+</html>

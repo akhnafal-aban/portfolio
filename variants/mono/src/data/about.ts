@@ -1,0 +1,2 @@
+export const ABOUT =
+  'Software engineer working across iOS, backend systems, and infrastructure. Builds maintainable products end to end — SwiftUI apps, Laravel platforms, databases, APIs, and the Linux servers they run on. Currently at the Apple Developer Academy @ UC Jakarta, expanding native iOS while continuing backend and production work. Published author in topic modeling research. GEMASTIK 2025 national finalist.'

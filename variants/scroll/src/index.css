@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #111111;
+  --color-ink-line: #1c1c1c;
+  --color-bone: #ededed;
+  --color-bone-soft: #b8b8b8;
+  --color-bone-mute: #6a6a6a;
+  --color-accent: #10b981;
+  --color-accent-dim: #0a7d59;
+
+  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --tracking-label: 0.22em;
+  --tracking-tight: -0.02em;
+  --tracking-tighter: -0.04em;
+  --tracking-tightest: -0.055em;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-ink);
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: 'tnum' 1, 'ss01' 1;
+    font-variant-numeric: tabular-nums;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* hide scrollbar but keep scroll */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+@layer utilities {
+  .t-mono {
+    font-family: var(--font-mono);
+    font-feature-settings: 'tnum' 1;
+  }
+
+  .t-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  .t-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    color: var(--color-bone-mute);
+  }
+
+  .t-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .t-display {
+    font-weight: 800;
+    letter-spacing: var(--tracking-tightest);
+    line-height: 0.92;
+  }
+
+  .t-body-soft {
+    color: var(--color-bone-soft);
+    line-height: 1.6;
+  }
+
+  /* Initial hidden state for GSAP reveal targets.
+     Reduced-motion users skip GSAP entirely; content must be visible by default,
+     so these only hide when motion is allowed (applied via JS, not CSS alone). */
+  .gsap-hidden {
+    opacity: 0;
+  }
+
+  /* grain / vignette overlay */
+  .vignette::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-hidden {
+    opacity: 1 !important;
+  }
+}
