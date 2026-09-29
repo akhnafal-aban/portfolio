@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/utils'
+import { EASE_OUT } from '@/lib/motion'
 
 const links = [
   { id: 'work', label: 'Work' },
@@ -43,7 +44,7 @@ export function Nav() {
     <motion.nav
       initial={reduce ? false : { opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: [...EASE_OUT] }}
       className="fixed left-1/2 top-4 z-50 -translate-x-1/2 px-4"
     >
       <div
@@ -73,7 +74,7 @@ export function Nav() {
               <motion.span
                 layoutId="nav-active"
                 className="absolute inset-0 -z-10 rounded-full bg-white/10"
-                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               />
             )}
             {link.label}

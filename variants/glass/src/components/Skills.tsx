@@ -8,7 +8,7 @@ export function Skills() {
       <SectionHeading index="04 / SKILLS" title="Technical stack" />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {skills.map((group, i) => (
-          <Reveal key={group.category} delay={(i % 2) * 0.06}>
+          <Reveal key={group.category} delay={(i % 2) * 0.08}>
             <div className="glass h-full rounded-2xl p-5">
               <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-teal-300/70">
                 {group.category}

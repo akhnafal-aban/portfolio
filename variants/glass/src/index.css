@@ -45,6 +45,19 @@ body {
     radial-gradient(ellipse 65% 55% at 75% 78%, rgba(45, 212, 191, 0.12), transparent 60%),
     radial-gradient(ellipse 55% 50% at 12% 82%, rgba(13, 148, 136, 0.12), transparent 55%),
     radial-gradient(ellipse 90% 60% at 50% 50%, rgba(20, 184, 166, 0.05), transparent 70%);
+  /* Slow, calm drift for a premium feel */
+  animation: mesh-drift 60s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes mesh-drift {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.05) translate3d(0, -1.5%, 0);
+  }
 }
 
 /* Subtle grain/noise overlay to keep glass from looking flat */
@@ -112,5 +125,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .mesh-bg {
+    animation: none;
+  }
+  /* Keep hover feedback but drop motion-heavy transforms */
+  .animate-pulse {
+    animation: none;
   }
 }

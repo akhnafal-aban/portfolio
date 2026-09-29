@@ -51,7 +51,7 @@ export function About() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.08}>
             <div className="glass rounded-2xl p-6">
               <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-teal-300/70">
                 Awards

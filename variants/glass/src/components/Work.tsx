@@ -2,9 +2,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { projects, type Project } from '@/data/content'
 import { SectionHeading } from './SectionHeading'
 import { cn } from '@/lib/utils'
-
-// Premium ease-out shared by all reveals in this variant.
-export const EASE_OUT = [0.16, 1, 0.3, 1] as const
+import { EASE_OUT, STAGGER } from '@/lib/motion'
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const reduce = useReducedMotion()
@@ -14,7 +12,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       initial={reduce ? false : { opacity: 0, y: 30 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay: (index % 2) * 0.08, ease: [...EASE_OUT] }}
+      transition={{ duration: 0.6, delay: (index % 2) * STAGGER, ease: [...EASE_OUT] }}
       whileHover={reduce ? undefined : { scale: 1.02, transition: { duration: 0.4, ease: 'easeOut' } }}
       className={cn(
         'glass group flex h-full flex-col rounded-2xl p-6',

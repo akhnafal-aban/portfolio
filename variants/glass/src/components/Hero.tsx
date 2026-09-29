@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { profile, stats } from '@/data/content'
+import { EASE_OUT } from '@/lib/motion'
 
 export function Hero() {
   const reduce = useReducedMotion()
@@ -9,7 +10,7 @@ export function Hero() {
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: [...EASE_OUT] }}
         className="glass-strong mx-auto w-full max-w-3xl rounded-3xl p-8 md:p-12"
       >
         <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-teal-300/80">
