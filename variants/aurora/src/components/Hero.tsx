@@ -10,9 +10,9 @@ export function Hero() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center px-4 pt-28 pb-20 text-center"
     >
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        initial={reduce ? false : { opacity: 0, y: 30, filter: 'blur(8px)' }}
+        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto w-full max-w-3xl"
       >
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-teal-200/90 backdrop-blur-md">
@@ -84,7 +84,7 @@ export function Hero() {
       <motion.div
         initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 0.8 }}
+        transition={{ delay: 1.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-400/70"
       >
         scroll

@@ -49,7 +49,7 @@ body {
     radial-gradient(ellipse 70% 60% at 50% 50%, rgba(16, 185, 129, 0.18), transparent 70%);
   background-repeat: no-repeat;
   will-change: transform, opacity;
-  animation: aurora-drift 28s ease-in-out infinite;
+  animation: aurora-drift 40s ease-in-out infinite;
 }
 
 .aurora-2 {
@@ -62,16 +62,16 @@ body {
     radial-gradient(ellipse 45% 45% at 25% 65%, rgba(20, 184, 166, 0.28), transparent 60%);
   background-repeat: no-repeat;
   will-change: transform, opacity;
-  animation: aurora-drift-2 36s ease-in-out infinite;
+  animation: aurora-drift-2 48s ease-in-out infinite;
   mix-blend-mode: screen;
   opacity: 0.8;
 }
 
 @keyframes aurora-drift {
   0%   { transform: translate3d(0%, 0%, 0) scale(1);    filter: hue-rotate(0deg); }
-  25%  { transform: translate3d(3%, -2%, 0) scale(1.08); filter: hue-rotate(8deg); }
-  50%  { transform: translate3d(-2%, 3%, 0) scale(1.04); filter: hue-rotate(-6deg); }
-  75%  { transform: translate3d(2%, 2%, 0) scale(1.1);  filter: hue-rotate(10deg); }
+  25%  { transform: translate3d(3%, -2%, 0) scale(1.08); filter: hue-rotate(4deg); }
+  50%  { transform: translate3d(-2%, 3%, 0) scale(1.04); filter: hue-rotate(-3deg); }
+  75%  { transform: translate3d(2%, 2%, 0) scale(1.1);  filter: hue-rotate(5deg); }
   100% { transform: translate3d(0%, 0%, 0) scale(1);    filter: hue-rotate(0deg); }
 }
 

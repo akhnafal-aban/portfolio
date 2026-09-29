@@ -6,16 +6,16 @@ export function Hero() {
       id="top"
       className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 flex flex-col items-start"
     >
-      <p className="font-mono text-xs text-white/40 mb-6 tracking-wide uppercase">
+      <p className="font-mono text-xs text-white/55 mb-6 tracking-wide uppercase">
         {profile.basedIn}
       </p>
-      <h1 className="hero-glow font-extrabold tracking-tighter text-5xl sm:text-7xl leading-[0.95] text-white/70 hover:text-white transition-colors duration-500">
+      <h1 className="hero-glow font-extrabold tracking-tighter text-5xl sm:text-7xl leading-[0.95] text-white/90 hover:text-white transition-colors duration-500">
         {profile.name}
       </h1>
-      <p className="mt-5 font-mono text-base sm:text-lg text-white/50">
+      <p className="mt-5 font-mono text-base sm:text-lg text-white/75">
         {profile.headline}
       </p>
-      <p className="mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-white/45">
+      <p className="mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-white/70">
         {profile.summary}
       </p>
 

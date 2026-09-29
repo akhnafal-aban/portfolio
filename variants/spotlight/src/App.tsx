@@ -24,7 +24,7 @@ function Section({
 }) {
   return (
     <section id={id} className="py-16 sm:py-24 border-t border-white/5">
-      <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-white/40 mb-8">
+      <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-white/55 mb-8">
         {title}
       </h2>
       {children}
@@ -53,12 +53,12 @@ function App() {
 
         <Section id="about" title="About">
           <div className="space-y-6">
-            <p className="text-base sm:text-lg leading-relaxed text-white/55 max-w-3xl">
+            <p className="text-base sm:text-lg leading-relaxed text-white/80 max-w-3xl">
               {profile.summary}
             </p>
 
             <div className="pt-4">
-              <h3 className="font-mono text-xs tracking-wide uppercase text-white/40 mb-3">
+              <h3 className="font-mono text-xs tracking-wide uppercase text-white/55 mb-3">
                 Experience
               </h3>
               <div className="space-y-5">
@@ -68,8 +68,8 @@ function App() {
                     className="dim dim-hover border border-white/10 rounded-xl p-5 bg-white/[0.02]"
                   >
                     <div className="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-                      <h4 className="font-semibold text-white/70">{e.role}</h4>
-                      <span className="font-mono text-xs text-white/40">
+                      <h4 className="font-semibold text-white/90">{e.role}</h4>
+                      <span className="font-mono text-xs text-white/55">
                         {e.period}
                       </span>
                     </div>
@@ -80,7 +80,7 @@ function App() {
                       {e.bullets.map((b, i) => (
                         <li
                           key={i}
-                          className="text-sm leading-relaxed text-white/45 list-none flex gap-2"
+                          className="text-sm leading-relaxed text-white/70 list-none flex gap-2"
                         >
                           <span className="text-emerald-400/40 select-none">—</span>
                           <span>{b}</span>
@@ -93,39 +93,39 @@ function App() {
             </div>
 
             <div className="pt-4">
-              <h3 className="font-mono text-xs tracking-wide uppercase text-white/40 mb-3">
+              <h3 className="font-mono text-xs tracking-wide uppercase text-white/55 mb-3">
                 Education
               </h3>
               <div className="dim dim-hover border border-white/10 rounded-xl p-5 bg-white/[0.02]">
                 <div className="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-                  <h4 className="font-semibold text-white/70">
+                  <h4 className="font-semibold text-white/90">
                     {education.school}
                   </h4>
-                  <span className="font-mono text-xs text-white/40">
+                  <span className="font-mono text-xs text-white/55">
                     {education.period}
                   </span>
                 </div>
                 <p className="font-mono text-xs text-emerald-400/70 mb-2">
                   {education.location}
                 </p>
-                <p className="text-sm text-white/45">
+                <p className="text-sm text-white/70">
                   {education.program}
                 </p>
-                <p className="text-sm text-white/45 mt-1">
+                <p className="text-sm text-white/70 mt-1">
                   GPA: <span className="font-mono">{education.gpa}</span>
                 </p>
               </div>
             </div>
 
             <div className="pt-4">
-              <h3 className="font-mono text-xs tracking-wide uppercase text-white/40 mb-3">
+              <h3 className="font-mono text-xs tracking-wide uppercase text-white/55 mb-3">
                 Awards
               </h3>
               <ul className="space-y-2">
                 {awards.map((a, i) => (
                   <li
                     key={i}
-                    className="text-sm text-white/45 flex gap-2 leading-relaxed"
+                    className="text-sm text-white/70 flex gap-2 leading-relaxed"
                   >
                     <span className="text-emerald-400/40 select-none">—</span>
                     <span>{a}</span>
@@ -138,19 +138,19 @@ function App() {
 
         <Section id="publications" title="Publications">
           <div className="dim dim-hover border border-white/10 rounded-xl p-5 sm:p-6 bg-white/[0.02]">
-            <h3 className="font-semibold text-white/70 mb-2 leading-snug">
+            <h3 className="font-semibold text-white/90 mb-2 leading-snug">
               {publication.title}
             </h3>
-            <p className="font-mono text-xs text-white/40 mb-1">
+            <p className="font-mono text-xs text-white/55 mb-1">
               {publication.authors}
             </p>
             <p className="font-mono text-xs text-emerald-400/70 mb-3">
               {publication.journal}
             </p>
-            <p className="text-sm text-white/45 leading-relaxed mb-1">
+            <p className="text-sm text-white/70 leading-relaxed mb-1">
               {publication.topic}
             </p>
-            <p className="font-mono text-xs text-white/35 mb-3">
+            <p className="font-mono text-xs text-white/50 mb-3">
               Indexed in {publication.indexed}
             </p>
             <a
@@ -171,7 +171,7 @@ function App() {
                 <h3 className="font-mono text-xs uppercase tracking-wide text-emerald-400/70 mb-1.5">
                   {s.category}
                 </h3>
-                <p className="text-sm text-white/45 leading-relaxed">{s.items}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{s.items}</p>
               </div>
             ))}
           </div>
@@ -179,7 +179,7 @@ function App() {
 
         <Section id="contact" title="Contact">
           <div className="space-y-4">
-            <p className="text-base text-white/55 max-w-2xl leading-relaxed">
+            <p className="text-base text-white/80 max-w-2xl leading-relaxed">
               Open to iOS and backend opportunities. Reach out via email or any
               of the links below.
             </p>
@@ -194,7 +194,7 @@ function App() {
                 href={profile.github}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-sm text-white/50 hover:text-white transition-colors duration-300 py-2"
+                className="font-mono text-sm text-white/70 hover:text-white transition-colors duration-300 py-2"
               >
                 GitHub — {profile.github.replace("https://", "")}
               </a>
@@ -202,7 +202,7 @@ function App() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-sm text-white/50 hover:text-white transition-colors duration-300 py-2"
+                className="font-mono text-sm text-white/70 hover:text-white transition-colors duration-300 py-2"
               >
                 LinkedIn — {profile.linkedin.replace("https://", "")}
               </a>
@@ -211,7 +211,7 @@ function App() {
         </Section>
 
         <footer className="py-12 border-t border-white/5">
-          <p className="font-mono text-xs text-white/30">
+          <p className="font-mono text-xs text-white/45">
             © {new Date().getFullYear()} {profile.name}. Built with React, Vite, and Tailwind CSS.
           </p>
         </footer>

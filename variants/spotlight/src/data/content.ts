@@ -24,7 +24,8 @@ export const projects = [
     title: "Really Sport Center Platform",
     period: "AUG 2025 - Present · Ongoing",
     stack: "Laravel · Full operational product",
-    repo: "https://github.com/akhnafal-aban",
+    live: "https://reallysportcenter.com",
+    admin: "https://admin.reallysportcenter.com",
     description:
       "End-to-end gym management platform covering members, memberships, payments, check-in/check-out, dashboards, reporting, and scheduled operations. Deployed and maintained across staging and production environments.",
     detail:
@@ -64,7 +65,7 @@ export const projects = [
     title: "TPA FTI — Academic Potential Test Platform",
     period: "MAY 2025 - Present",
     stack: "Laravel · Role-based web platform · LLM integration",
-    repo: "https://github.com/akhnafal-aban",
+    live: "https://tbe-fit.uii.ac.id/",
     description:
       "Built authentication for admin and student roles, personalized result guidance via LLM, and filtered CSV exports with aggregation. Developed for faculty use at Universitas Islam Indonesia.",
     detail:

@@ -2,7 +2,7 @@
 
 @theme {
   --color-bg: #0a0a0a;
-  --color-dim: rgba(255, 255, 255, 0.6);
+  --color-dim: rgba(255, 255, 255, 0.8);
   --color-accent: #10b981;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -29,16 +29,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Global spotlight overlay — radial light follows mouse */
+/* Global spotlight overlay — subtle radial light behind content, follows mouse */
 .spotlight-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1;
   background: radial-gradient(
-    circle 220px at var(--mx) var(--my),
-    rgba(255, 255, 255, 0.07),
-    transparent 100%
+    circle 260px at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.05),
+    transparent 70%
   );
   transition: background 0.05s linear;
 }
@@ -54,12 +54,12 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle 180px at var(--cx, 50%) var(--cy, 50%),
-    rgba(255, 255, 255, 0.1),
+    circle 220px at var(--cx, 50%) var(--cy, 50%),
+    rgba(255, 255, 255, 0.08),
     transparent 70%
   );
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 0;
 }
@@ -73,9 +73,13 @@ body {
   z-index: 1;
 }
 
-/* Dim content brightens on hover */
+/* Content readable by default; hover adds a subtle brighten + border lift */
 .dim {
-  transition: color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .dim-hover:hover {
@@ -92,6 +96,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .spotlight-overlay {
+    transition: none;
   }
   .spotlight-card::before {
     transition: none;

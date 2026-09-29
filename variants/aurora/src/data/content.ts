@@ -28,6 +28,8 @@ export type Project = {
   kind: string
   blurb: string
   link?: string
+  live?: string
+  admin?: string
   repo?: string
 }
 
@@ -70,6 +72,8 @@ export const projects: Project[] = [
     kind: 'Backend · Production',
     blurb:
       'End-to-end gym management platform — members, memberships, payments, check-in/out, dashboards, reporting, and scheduled operations. Deployed and maintained across staging and production with SSH-based server administration.',
+    live: 'https://reallysportcenter.com',
+    admin: 'https://admin.reallysportcenter.com',
   },
   {
     id: 'tpa-fti',
@@ -79,6 +83,7 @@ export const projects: Project[] = [
     kind: 'Backend · Faculty',
     blurb:
       'Role-based academic potential test platform for the Faculty of Industrial Technology. Authentication for admin and student roles, personalized LLM guidance, and filtered CSV exports with aggregation for analysis.',
+    live: 'https://tbe-fit.uii.ac.id/',
   },
   {
     id: 'danantara',
