@@ -28,7 +28,7 @@ export function Hero() {
         </a>
         <a
           href={`mailto:${profile.email}`}
-          className="font-mono text-sm text-white/50 hover:text-white transition-colors duration-300"
+          className="font-mono text-sm text-white/70 hover:text-white transition-colors duration-300"
         >
           {profile.email}
         </a>
@@ -36,7 +36,7 @@ export function Hero() {
           href={profile.github}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-sm text-white/50 hover:text-white transition-colors duration-300"
+          className="font-mono text-sm text-white/70 hover:text-white transition-colors duration-300"
         >
           GitHub
         </a>
@@ -44,7 +44,7 @@ export function Hero() {
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-sm text-white/50 hover:text-white transition-colors duration-300"
+          className="font-mono text-sm text-white/70 hover:text-white transition-colors duration-300"
         >
           LinkedIn
         </a>

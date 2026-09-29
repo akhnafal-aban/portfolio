@@ -3,21 +3,23 @@ import { projects, type Project } from '@/data/content'
 import { SectionHeading } from './SectionHeading'
 import { cn } from '@/lib/utils'
 
+// Premium ease-out shared by all reveals in this variant.
+export const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const reduce = useReducedMotion()
 
   return (
-    <motion.a
-      href={project.repo ?? project.link ?? '#work'}
-      target={project.repo ?? project.link ? '_blank' : undefined}
-      rel={project.repo ?? project.link ? 'noreferrer' : undefined}
+    <motion.div
       initial={reduce ? false : { opacity: 0, y: 30 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.55, delay: (index % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={reduce ? undefined : { scale: 1.015, y: -3 }}
+      transition={{ duration: 0.6, delay: (index % 2) * 0.08, ease: [...EASE_OUT] }}
+      whileHover={reduce ? undefined : { scale: 1.02, transition: { duration: 0.4, ease: 'easeOut' } }}
       className={cn(
-        'glass group flex h-full flex-col rounded-2xl p-6 transition-shadow duration-300 hover:shadow-[0_20px_60px_rgba(20,184,166,0.15)]',
+        'glass group flex h-full flex-col rounded-2xl p-6',
+        'transition-[border-color,box-shadow] duration-[400ms] ease-out',
+        'hover:border-teal-400/40 hover:shadow-[0_20px_60px_rgba(20,184,166,0.18)]',
       )}
     >
       <div className="flex items-start justify-between gap-3">
@@ -44,13 +46,51 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         ))}
       </div>
 
-      {(project.repo ?? project.link) && (
-        <div className="mt-5 flex items-center gap-1.5 font-mono text-[11px] text-teal-300/70 transition-colors group-hover:text-teal-200">
-          {project.repo ? 'github.com/akhnafal-aban' : 'view'}
-          <span className="transition-transform group-hover:translate-x-0.5">→</span>
+      {(project.repo ?? project.live ?? project.link ?? project.admin) && (
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono text-[11px]">
+          {project.repo && (
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-400 transition-colors hover:text-teal-200"
+            >
+              Repo <span aria-hidden>↗</span>
+            </a>
+          )}
+          {project.link && !project.repo && !project.live && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-400 transition-colors hover:text-teal-200"
+            >
+              Link <span aria-hidden>↗</span>
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-teal-300 transition-colors hover:text-teal-200"
+            >
+              Live <span aria-hidden>↗</span>
+            </a>
+          )}
+          {project.admin && (
+            <a
+              href={project.admin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-500 transition-colors hover:text-teal-300/80"
+            >
+              Admin <span aria-hidden>↗</span>
+            </a>
+          )}
         </div>
       )}
-    </motion.a>
+    </motion.div>
   )
 }
 

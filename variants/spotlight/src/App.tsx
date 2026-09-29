@@ -73,7 +73,7 @@ function App() {
                         {e.period}
                       </span>
                     </div>
-                    <p className="font-mono text-xs text-emerald-400/70 mb-3">
+                    <p className="font-mono text-xs text-emerald-400/80 mb-3">
                       {e.org}
                     </p>
                     <ul className="space-y-1.5">
@@ -105,7 +105,7 @@ function App() {
                     {education.period}
                   </span>
                 </div>
-                <p className="font-mono text-xs text-emerald-400/70 mb-2">
+                <p className="font-mono text-xs text-emerald-400/80 mb-2">
                   {education.location}
                 </p>
                 <p className="text-sm text-white/70">
@@ -144,7 +144,7 @@ function App() {
             <p className="font-mono text-xs text-white/55 mb-1">
               {publication.authors}
             </p>
-            <p className="font-mono text-xs text-emerald-400/70 mb-3">
+            <p className="font-mono text-xs text-emerald-400/80 mb-3">
               {publication.journal}
             </p>
             <p className="text-sm text-white/70 leading-relaxed mb-1">
@@ -157,7 +157,7 @@ function App() {
               href={publication.pipeline}
               target="_blank"
               rel="noreferrer"
-              className="font-mono text-xs text-emerald-400/70 hover:text-emerald-400 transition-colors duration-300"
+              className="font-mono text-xs text-emerald-400/80 hover:text-emerald-400 transition-colors duration-300"
             >
               Research pipeline → {publication.pipeline.replace("https://", "")}
             </a>
@@ -168,7 +168,7 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
             {skills.map((s) => (
               <div key={s.category} className="dim dim-hover py-1">
-                <h3 className="font-mono text-xs uppercase tracking-wide text-emerald-400/70 mb-1.5">
+                <h3 className="font-mono text-xs uppercase tracking-wide text-emerald-400/80 mb-1.5">
                   {s.category}
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed">{s.items}</p>
