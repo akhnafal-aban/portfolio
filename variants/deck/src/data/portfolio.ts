@@ -9,9 +9,9 @@ export const profile = {
   github: 'https://github.com/akhnafal-aban',
   linkedin: 'https://www.linkedin.com/in/akhnaf-aban',
   youtube: 'https://youtube.com/@noorakhnafalaban-9917',
-  gpa: '3.87 / 4.00',
+  gpa: '3.84 / 4.00',
   school: 'Universitas Islam Indonesia — Yogyakarta',
-  degree: 'Bachelor of Informatics · Faculty of Industrial Technology · 2022 - Present',
+  degree: 'Bachelor of Informatics · Faculty of Industrial Technology · 2022 - 2026 (Graduated)',
   summary:
     'Software engineer across iOS, backend systems, production deployment, and server operations. Builds maintainable digital products over the application lifecycle — SwiftUI development alongside Laravel platforms, databases, APIs, and Linux infrastructure.',
   currentRole: 'Junior Developer - iOS · Apple Developer Academy @ UC Jakarta',

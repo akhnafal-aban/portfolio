@@ -9,7 +9,7 @@ export const about: Line[] = [
   ln('Noor Akhnafal Aban', 'b'),
   ln('Software Engineer  ·  iOS  ·  Backend Systems', 'a'),
   ln('Jakarta, Indonesia', 'm'),
-  [{ t: 'Universitas Islam Indonesia — Bachelor of Informatics · 2022 - Present · GPA 3.87/4.00', c: 'd' }],
+  [{ t: 'Universitas Islam Indonesia — Bachelor of Informatics · 2022 - 2026 (Graduated) · GPA 3.84/4.00', c: 'd' }],
   [{ t: 'Backend-leaning generalist. Laravel, Python, Swift. Production deployment + Linux server ops. Builds maintainable products across the application lifecycle — SwiftUI apps, REST APIs, databases, infrastructure.', c: 'd' }],
   [{ t: 'Current:  iOS Developer @ Apple Developer Academy @ UC Jakarta (contract, Feb 2026 -)', c: 'cy' }],
   [{ t: '          Software Engineer @ Really Sport Center (freelance, Aug 2025 -)', c: 'cy' }],

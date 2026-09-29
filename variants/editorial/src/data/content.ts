@@ -102,7 +102,7 @@ export const ABOUT = {
     },
     {
       place: 'Yogyakarta',
-      note: 'Universitas Islam Indonesia — Bachelor of Informatics, Faculty of Industrial Technology. GPA 3.87 / 4.00. 2022 — present.',
+      note: 'Universitas Islam Indonesia — Bachelor of Informatics, Faculty of Industrial Technology. GPA 3.84 / 4.00. 2022 — 2026 (Graduated).',
     },
     {
       place: 'Jakarta',
@@ -160,7 +160,7 @@ export const PUBLICATIONS = [
 export const RECOGNITION = [
   'GEMASTIK 2025 national-round finalist (one of six Informatics UII students advancing)',
   'Published author — Rabit: Jurnal Teknologi dan Sistem Informasi, 2026',
-  'GPA 3.87 / 4.00 — Universitas Islam Indonesia',
+  'GPA 3.84 / 4.00 — Universitas Islam Indonesia',
 ]
 
 export const SKILLS: { group: string; items: string[] }[] = [

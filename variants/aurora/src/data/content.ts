@@ -14,7 +14,7 @@ export const profile = {
 } as const
 
 export const stats = [
-  { value: '3.87', label: 'GPA / 4.00' },
+  { value: '3.84', label: 'GPA / 4.00' },
   { value: '2026', label: 'First publication' },
   { value: '6+', label: 'Shipped projects' },
   { value: 'GEMASTIK', label: '2025 national finalist' },

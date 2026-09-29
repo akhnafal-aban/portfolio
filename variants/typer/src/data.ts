@@ -17,8 +17,8 @@ export const profile = {
   youtubeUrl: 'https://youtube.com/@noorakhnafalaban-9917',
   summary:
     'Software engineer with experience spanning iOS development, backend systems, production deployment, and server operations. Builds maintainable digital products across the application lifecycle — SwiftUI development with Laravel-based platforms, databases, APIs, and Linux infrastructure.',
-  gpa: '3.87 / 4.00',
-  education: 'Universitas Islam Indonesia — Bachelor of Informatics (2022 - Present)',
+  gpa: '3.84 / 4.00',
+  education: 'Universitas Islam Indonesia — Bachelor of Informatics (2022 - 2026 (Graduated))',
 }
 
 export type Experience = {

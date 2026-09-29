@@ -43,9 +43,9 @@ export function About() {
               </h3>
               <p className="mt-3 text-sm font-medium text-white">Universitas Islam Indonesia</p>
               <p className="text-sm text-zinc-400">Bachelor of Informatics</p>
-              <p className="mt-1 text-xs text-zinc-500">Faculty of Industrial Technology · 2022 - Present</p>
+              <p className="mt-1 text-xs text-zinc-500">Faculty of Industrial Technology · 2022 - 2026 (Graduated)</p>
               <div className="mt-4 inline-flex items-baseline gap-1.5 rounded-lg border border-teal-400/20 bg-teal-400/5 px-3 py-1.5">
-                <span className="font-mono text-lg font-semibold text-teal-200">3.87</span>
+                <span className="font-mono text-lg font-semibold text-teal-200">3.84</span>
                 <span className="text-xs text-zinc-500">/ 4.00 GPA</span>
               </div>
             </div>

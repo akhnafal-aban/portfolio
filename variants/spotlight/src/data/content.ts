@@ -158,8 +158,8 @@ export const education = {
   school: "Universitas Islam Indonesia",
   location: "Yogyakarta, Indonesia",
   program: "Bachelor of Informatics · Faculty of Industrial Technology",
-  period: "2022 - Present",
-  gpa: "3.87 / 4.00",
+  period: "2022 - 2026 (Graduated)",
+  gpa: "3.84 / 4.00",
 };
 
 export const awards = [

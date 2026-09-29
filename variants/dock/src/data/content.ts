@@ -38,7 +38,7 @@ export const profile = {
   email: 'akhnafal03@gmail.com',
   github: 'https://github.com/akhnafal-aban',
   linkedin: 'https://linkedin.com/in/akhnaf-aban',
-  education: 'B.Sc. Informatics, Universitas Islam Indonesia - GPA 3.87 / 4.00',
+  education: 'B.Sc. Informatics, Universitas Islam Indonesia - GPA 3.84 / 4.00',
   award: 'GEMASTIK 2025 National Round finalist',
 }
 

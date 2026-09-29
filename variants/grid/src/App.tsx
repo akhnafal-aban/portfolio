@@ -32,7 +32,7 @@ function Hero() {
         on-device AI to production deployment.
       </p>
       <p className="mt-4 font-mono text-sm text-muted">
-        Jakarta, Indonesia · GPA 3.87/4.00 · Universitas Islam Indonesia
+        Jakarta, Indonesia · GPA 3.84/4.00 · Universitas Islam Indonesia
       </p>
       <div className="mt-10 flex flex-wrap items-center gap-3">
         <a

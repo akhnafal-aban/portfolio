@@ -8,7 +8,7 @@ export const profile = {
   github: 'https://github.com/akhnafal-aban',
   linkedin: 'https://linkedin.com/in/akhnaf-aban',
   youtube: 'https://youtube.com/@noorakhnafalaban-9917',
-  gpa: '3.87 / 4.00',
+  gpa: '3.84 / 4.00',
   education: 'Universitas Islam Indonesia — Yogyakarta',
 }
 

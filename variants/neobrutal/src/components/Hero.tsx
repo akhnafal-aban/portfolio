@@ -70,7 +70,7 @@ export function Hero() {
                 {[
                   ['3', 'roles live'],
                   ['6', 'projects'],
-                  ['3.87', 'GPA'],
+                  ['3.84', 'GPA'],
                 ].map(([n, l]) => (
                   <div
                     key={l}

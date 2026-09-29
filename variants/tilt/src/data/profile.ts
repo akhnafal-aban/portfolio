@@ -17,8 +17,8 @@ export const profile = {
     school: "Universitas Islam Indonesia",
     city: "Yogyakarta, Indonesia",
     degree: "Bachelor of Informatics · Faculty of Industrial Technology",
-    period: "2022 - Present",
-    gpa: "3.87 / 4.00",
+    period: "2022 - 2026 (Graduated)",
+    gpa: "3.84 / 4.00",
   },
 };
 

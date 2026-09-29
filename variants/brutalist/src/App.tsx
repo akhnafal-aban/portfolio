@@ -95,7 +95,7 @@ function Hero() {
           <ul className="space-y-1">
             <li>{'> iOS @ Apple Dev Academy UC Jakarta'}</li>
             <li>{'> Backend @ Really Sport Center'}</li>
-            <li>{'> Informatics @ UII — GPA 3.87/4.00'}</li>
+            <li>{'> Informatics @ UII — GPA 3.84/4.00'}</li>
             <li>{'> Published: Rabit J. Vol 11 No 1 (2026)'}</li>
           </ul>
         </div>
@@ -201,7 +201,7 @@ function About() {
           <p className="font-bold">Universitas Islam Indonesia</p>
           <p>Bachelor of Informatics</p>
           <p>Faculty of Industrial Technology</p>
-          <p>2022 - Present · GPA 3.87/4.00</p>
+          <p>2022 - 2026 (Graduated) · GPA 3.84/4.00</p>
           <p className="label mt-4 mb-2">// AWARDS</p>
           <ul className="space-y-1">
             <li>- GEMASTIK 2025 national round finalist</li>

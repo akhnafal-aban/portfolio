@@ -28,7 +28,7 @@ export const profile = {
 }
 
 export const stats: Stat[] = [
-  { label: 'GPA', value: '3.87', sub: 'UII Informatics · /4.00' },
+  { label: 'GPA', value: '3.84', sub: 'UII Informatics · /4.00' },
   { label: 'GEMASTIK', value: '2025', sub: 'National round finalist' },
   { label: 'PUBLISHED', value: '2026', sub: 'Rabit Journal · Vol 11 No 1' },
 ]

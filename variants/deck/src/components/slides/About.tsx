@@ -17,7 +17,7 @@ export function AboutSlide({ index, total }: { index: number; total: number }) {
             <div>
               <div className="text-mute-2">EDUCATION</div>
               <div className="mt-1 text-paper/90">Universitas Islam Indonesia</div>
-              <div className="text-mute">Yogyakarta · 2022 - Present</div>
+              <div className="text-mute">Yogyakarta · 2022 - 2026 (Graduated)</div>
               <div className="text-amber">GPA {profile.gpa}</div>
             </div>
             <div>

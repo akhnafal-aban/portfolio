@@ -135,6 +135,6 @@ export const awards = [
 export const education = {
   school: 'Universitas Islam Indonesia — Yogyakarta',
   degree: 'Bachelor of Informatics · Faculty of Industrial Technology',
-  date: '2022 - Present',
-  gpa: '3.87 / 4.00',
+  date: '2022 - 2026 (Graduated)',
+  gpa: '3.84 / 4.00',
 }
